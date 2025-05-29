@@ -8,7 +8,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { RadialGlow } from "@/components/ui/radial-glow"
+
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -140,18 +140,17 @@ function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
     <div
       ref={carouselRef}
       className={cn(
-        "overflow-x-auto overflow-y-visible scrollbar-none -mx-2 px-2 sm:overflow-hidden sm:px-0 w-full",
+        "overflow-x-auto overflow-y-visible scrollbar-none sm:overflow-hidden w-full",
         orientation === "horizontal" && "-mb-2 pb-2 -mt-2",
         orientation === "vertical" && "overflow-y-auto",
-        "snap-x snap-mandatory",
-        // mobilde yatay scroll için
+        "snap-x snap-mandatory"
       )}
       style={{ WebkitOverflowScrolling: 'touch' }}
       data-slot="carousel-content"
     >
       <div
         className={cn(
-          "flex gap-4 sm:gap-6",
+          "flex gap-2 sm:gap-6 px-0 sm:px-8", 
           orientation === "horizontal" ? "flex-row" : "flex-col",
           className
         )}
@@ -165,14 +164,14 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
   const { orientation } = useCarousel()
 
   return (
-    <RadialGlow
+    <div
       role="group"
       aria-roledescription="slide"
       data-slot="carousel-item"
       className={cn(
-        // Mobilde kartlar ekrana sığacak şekilde min-w ve snap ayarı
-        "min-w-[85vw] sm:min-w-0 snap-center shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 px-1 sm:px-2",
-        orientation === "horizontal" ? "pl-0 sm:pl-4" : "pt-4",
+        // Mobilde tam genişlikte ve sadece bir kart görünecek şekilde ayarlandı
+        "w-full min-w-full max-w-full snap-center shrink-0 grow-0 basis-full sm:min-w-0 sm:w-auto sm:basis-1/2 lg:basis-1/3",
+        orientation === "horizontal" ? "" : "pt-4",
         className
       )}
       {...props}

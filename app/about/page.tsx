@@ -5,7 +5,7 @@ import Header from "../../components/Header"; // Header eklendi
 import Talktous from "../../components/talktous";
 import Footer from "../../components/Footer";
 import Image from "next/image";
-import { RadialGlow } from "../../components/ui/radial-glow";
+
 
 const team = [
 	{ name: "Fevziye Nur Aksoy", role: "Founder" },
@@ -372,38 +372,43 @@ export default function About() {
 						</p>
 					</div>
 					{/* Tabs */}
-					<div className="flex gap-8 justify-center mb-8 border-b border-[#23233a] relative" style={{ position: "relative" }}>
-						{techTabs.map((tab, idx) => (
-							<button
-								key={tab}
-								ref={el => { tabRefs.current[idx] = el; }}
-								className={`pb-2 text-lg font-medium transition-colors duration-300 relative
-									${techTab === tab
-										? "text-[#a78bfa]"
-										: "text-gray-400 hover:text-gray-200"}
-								`}
-								onClick={() => {
-									if (techTab !== tab) {
-										setTabChanging(true);
-										setTimeout(() => {
-											setTechTab(tab);
-											setTabChanging(false);
-										}, 200);
-									}
+					<div className="w-full overflow-x-auto lg:overflow-x-visible">
+						<div
+							className="flex gap-4 sm:gap-6 md:gap-8 justify-start lg:justify-center mb-8 border-b border-[#23233a] relative flex-nowrap px-1 sm:px-2"
+							style={{ position: "relative" }}
+						>
+							{techTabs.map((tab, idx) => (
+								<button
+									key={tab}
+									ref={el => { tabRefs.current[idx] = el; }}
+									className={`pb-2 text-base sm:text-lg font-medium transition-colors duration-300 relative min-w-[90px] sm:min-w-[110px] md:min-w-[120px] whitespace-nowrap
+										${techTab === tab
+											? "text-[#a78bfa]"
+											: "text-gray-400 hover:text-gray-200"}
+									`}
+									onClick={() => {
+										if (techTab !== tab) {
+											setTabChanging(true);
+											setTimeout(() => {
+												setTechTab(tab);
+												setTabChanging(false);
+											}, 200);
+										}
+									}}
+								>
+									{tab}
+								</button>
+							))}
+							{/* Animated underline */}
+							<span
+								className="absolute bottom-0 h-0.5 bg-[#a78bfa] rounded transition-all duration-300"
+								style={{
+									left: underlineStyle.left,
+									width: underlineStyle.width,
+									pointerEvents: "none",
 								}}
-							>
-								{tab}
-							</button>
-						))}
-						{/* Animated underline */}
-						<span
-							className="absolute bottom-0 h-0.5 bg-[#a78bfa] rounded transition-all duration-300"
-							style={{
-								left: underlineStyle.left,
-								width: underlineStyle.width,
-								pointerEvents: "none",
-							}}
-						/>
+							/>
+						</div>
 					</div>
 					{/* Tab Content */}
 					<div
@@ -432,25 +437,7 @@ export default function About() {
 						}
 					`}</style>
 				</section>
-				{/* Blog Section */}
-				<section className="relative z-10 container mx-auto px-4 pb-24">
-					<div className="flex flex-col items-center justify-center text-center gap-3 mb-16">
-						<span className="text-sm sm:text-base text-transparent bg-clip-text bg-gradient-to-br from-violet-500 to-indigo-600 font-semibold">
-							Void Blog
-						</span>
-						<h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-gray-100 to-indigo-300 leading-tight">
-							Articles
-						</h1>
-						<p className="text-sm sm:text-base font-medium text-gray-500 max-w-md sm:max-w-lg">
-							Hear from our experts about the latest technologies and our experiences.
-						</p>
-					</div>
-					{/* RadialGlow örnek kart */}
-					<RadialGlow className="max-w-md mx-auto p-8 rounded-2xl border border-[#23233a] bg-[#181825]/60 mb-8">
-						<h2 className="text-lg font-bold mb-2">Radial Glow Hover Efekti</h2>
-						<p className="text-gray-400">Bu kartın üstüne mouse ile gelince ışık efekti oluşur.</p>
-					</RadialGlow>
-				</section>
+				
 			</section>
 			<Talktous />
 			<div className="h-40" />

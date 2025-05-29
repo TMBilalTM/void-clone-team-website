@@ -1,15 +1,12 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
-import { useRadialGlow } from "@/components/ui/radial-glow"
 
 function Card({ className, ...props }: React.ComponentProps<"div">) {
-  const { onMouseMove } = useRadialGlow();
   return (
     <div
       data-slot="card"
-      onMouseMove={onMouseMove}
       className={cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-2xl border py-6 shadow-sm radial-glow",
+        "text-card-foreground flex flex-col gap-2 rounded-2xl py-3", // gap-4 -> gap-2
         className
       )}
       {...props}

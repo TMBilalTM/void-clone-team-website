@@ -71,7 +71,7 @@ function WhyChooseUs() {
       </div>
 
       <div className="flex flex-col md:flex-row gap-4 sm:gap-6 w-full px-4 overflow-x-hidden">
-  <RadialGlow className="card-border group md:w-2/6 w-full rounded-xl p-4 sm:p-8 flex flex-col items-start justify-center text-center min-h-[260px] sm:min-h-[340px]">
+  <RadialGlow className="  border border-[#23233a] bg-[#181825]/60 group md:w-2/6 w-full rounded-xl p-4 sm:p-8 flex flex-col items-start justify-center text-center min-h-[260px] sm:min-h-[340px]">
     <h2 className="text-base xs:text-md sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-gray-100 to-indigo-300 mb-2 sm:mb-4 max-w-full sm:w-80">
 
       Understand the importance of privacy
@@ -93,7 +93,7 @@ function WhyChooseUs() {
 
         {/* Sağ sütun */}
         <div className="md:flex-1 flex flex-col gap-4 sm:gap-8 max-w-2xl w-full">
-          <RadialGlow className="card-border border border-transparent rounded-xl p-3 sm:p-6 flex flex-col sm:flex-row justify-between items-center w-full min-h-[120px] sm:min-h-[180px]">
+          <RadialGlow className="border border-[#23233a] bg-[#181825]/60 group  rounded-xl p-3 sm:p-6 flex flex-col sm:flex-row justify-between items-center w-full min-h-[120px] sm:min-h-[180px]">
             <div className="flex-1">
               <h2 className="text-base xs:text-lg sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-gray-100 to-indigo-300 mb-2 sm:mb-4">
                 Design with globalization in mind
@@ -117,7 +117,7 @@ function WhyChooseUs() {
           {/* Alt iki kart */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 flex-1 w-full">
             {/* Sol alt kart */}
-            <RadialGlow className="card-border rounded-xl p-3 sm:p-8 flex flex-col items-start justify-center text-center w-full min-h-[100px] sm:min-h-[140px]">
+            <RadialGlow className="border border-[#23233a] bg-[#181825]/60 group rounded-xl p-3 sm:p-8 flex flex-col items-start justify-center text-center w-full min-h-[100px] sm:min-h-[140px]">
               <h2 className="text-xs xs:text-base sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-gray-100 to-indigo-300 mb-1 sm:mb-2">
                 Strive to do the best for everyone
               </h2>
@@ -128,7 +128,7 @@ function WhyChooseUs() {
             </RadialGlow>
 
             {/* Sağ alt kart */}
-            <RadialGlow className="card-border border border-transparent rounded-xl p-3 sm:p-6 flex flex-col items-center justify-center text-center w-full min-h-[100px] sm:min-h-[140px]">
+            <RadialGlow className="border border-[#23233a] bg-[#181825]/60 group rounded-xl p-3 sm:p-6 flex flex-col items-center justify-center text-center w-full min-h-[100px] sm:min-h-[140px]">
               <h2 className="text-xs xs:text-base sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-gray-100 to-indigo-300 mb-1 sm:mb-2">
                 Leverage cutting-edge technologies
               </h2>
@@ -457,7 +457,7 @@ export default function Home() {
 
             // Return the carousel JSX
             return (
-              <div className="w-full max-w-xs sm:max-w-5xl mx-auto px-0 sm:px-4 mb-8 sm:mb-0">
+              <div className="w-full max-w-xs sm:max-w-5xl mx-auto px-0 sm:px-4 mb-8 sm:mb-0 ">
                 <Carousel
                   opts={{
                     align: "start",
@@ -471,25 +471,27 @@ export default function Home() {
                         className=""
                       >
                         <div className="h-full flex flex-col w-full">
-                          <Card className="h-full border border-[#232336] rounded-2xl shadow-lg transition-all duration-300 w-full mb-4 sm:mb-0">
-                            <CardContent className="flex flex-col items-start justify-start p-4 h-38">
-                              <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full ">
-                                {item.icon}
-                              </div>
-                              <h2 className="line-clamp-1 text-base font-bold text-transparent bg-clip-text bg-gradient-to-br from-gray-100 to-indigo-300 mb-1 text-left">
-                                {item.title}
-                              </h2>
-                              <p className="text-sm font-medium text-[#8b8ba7] text-left">
-                                {item.desc}
-                              </p>
-                            </CardContent>
-                          </Card>
+                          <RadialGlow className="h-full rounded-2xl border border-[#232336] bg-[#181825]/60 group">
+                            <Card className="h-full  rounded-2xl w-full">
+                              <CardContent className="flex flex-col items-start justify-start p-4 h-38">
+                                <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full ">
+                                  {item.icon}
+                                </div>
+                                <h2 className="line-clamp-1 text-base font-bold text-transparent bg-clip-text bg-gradient-to-br from-gray-100 to-indigo-300 mb-1 text-left">
+                                  {item.title}
+                                </h2>
+                                <p className="text-sm font-medium text-[#8b8ba7] text-left">
+                                  {item.desc}
+                                </p>
+                              </CardContent>
+                            </Card>
+                          </RadialGlow>
                         </div>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
                   {/* Oklar kartların altında ortalanmış şekilde */}
-                  <div className="flex justify-center sm:justify-end mt-2 sm:mt-6 gap-2">
+                  <div className="flex justify-center sm:justify-end mt-8 sm:mt-6 gap-2">
                     <CarouselPrevious className="relative left-0 top-0 size-8 sm:size-10 border border-[#232336] text-gray-500 shadow transition-all duration-200" />
                     <CarouselNext className="relative left-0 top-0 size-8 sm:size-10 border border-[#232336] text-gray-500 shadow transition-all duration-200" />
                   </div>
