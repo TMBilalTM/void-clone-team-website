@@ -23,11 +23,11 @@
 
 ## 🚀 Proje Hakkında
 
-Devs, modern web uygulamaları geliştirmek için tasarlanmış, Next.js 15 ve React 19 üzerine kurulu, şık ve ölçeklenebilir bir monorepodur. UI/UX için shadcn/ui, Radix UI, TailwindCSS ve Lucide ikonları ile zenginleştirilmiştir. Proje, açık kaynak ve topluluk katkısına açıktır.
+VoidDevs, modern web uygulamaları geliştirmek için tasarlanmış, Next.js 15 ve React 19 üzerine kurulu, şık ve ölçeklenebilir bir monorepodur. UI/UX için shadcn/ui, Radix UI, TailwindCSS ve Lucide ikonları ile zenginleştirilmiştir. Proje, açık kaynak ve topluluk katkısına açıktır.
 
 ## 🔥 Canlı Demo
 
-> Henüz deploy edilmedi. [Vercel ile kolayca deploy edin!](https://vercel.com/new)
+> [https://void-clone-team-website.vercel.app/](https://void-clone-team-website.vercel.app/)
 
 ## 🛠️ Kullanılan Teknolojiler
 
@@ -91,7 +91,7 @@ bun install
    ```powershell
    npm run dev
    ```
-4. Tarayıcıda [http://localhost:3000](http://localhost:3000) adresini açın.
+4. Tarayıcıda [http://localhost:3000](http://localhost:3000) adresini açın veya canlı demoyu ziyaret edin.
 
 ## 🧩 Scriptler
 
@@ -110,7 +110,7 @@ NEXT_PUBLIC_GITHUB_TOKEN=TOKEN
 
 ## 🤝 Katkı
 
-Katkıda bulunmak için lütfen bir fork oluşturun, değişikliklerinizi yeni bir branch'te yapın ve PR gönderin. Her türlü katkı ve öneriye açığız!
+Katkıda bulunmak için lütfen bir fork oluşturun, değişikliklerinizi yeni bir branch'te yapın ve PR gönderin. Her türlü katkı ve öneriye açığız! Canlı demo üzerinden de geri bildirim bırakabilirsiniz.
 
 ## 📄 Lisans
 
@@ -118,8 +118,9 @@ MIT
 
 ## 📬 İletişim
 
-- [İletişim Sayfası](/contact)
+- [İletişim Sayfası](https://void-clone-team-website.vercel.app/contact)
 - [GitHub Issues](https://github.com/TMBilalTM/void-clone-team-website/issues)
+- [Canlı Demo](https://void-clone-team-website.vercel.app/)
 
 ---
 
