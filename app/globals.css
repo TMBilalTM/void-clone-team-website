@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0f;
+  --foreground: #e0e6ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: #0a0a0f;
+  color: var(--foreground);
+  font-family: 'Geist', Arial, Helvetica, sans-serif;
+}
+.card-border {
+  position: relative;
+  border: 1px solid #4b5563;
+  border-radius: 1rem;
+  overflow: visible;
+}
+
+.card-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  pointer-events: none;
+  z-index: 50;
+  background:
+    radial-gradient(
+      circle at var(--x, 50%) var(--y, 50%),
+      rgba(255, 255, 255, 0.5) 0%,
+      transparent 60%
+    );
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 2px;
+  transition: background 0.2s ease;
+}
+
+.radial-glow {
+  position: relative;
+  transition: all 0.3s;
+  overflow: visible;
+}
+.radial-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+  background: radial-gradient(circle at var(--x, 30%) var(--y, 30%), rgba(167,139,250,0.18) 0%, rgba(39,39,42,0.0) 70%);
+  z-index: 50;
+}
+
+.radial-glow:hover::before, .radial-glow:focus::before, .radial-glow.group-hover::before {
+  opacity: 1;
+}
+
+/* Carousel scrollbar ve snap scroll için yardımcılar */
+@media (max-width: 640px) {
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel-mobile-spacing {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* Snap scroll davranışı */
+.snap-x {
+  scroll-snap-type: x mandatory;
+}
+.snap-center {
+  scroll-snap-align: center;
+}
+
+/* Kartların overflow taşmasını önle */
+@media (max-width: 640px) {
+  .carousel-card {
+    min-width: 85vw;
+    max-width: 95vw;
+  }
+}
