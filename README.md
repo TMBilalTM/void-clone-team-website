@@ -125,5 +125,5 @@ MIT
 ---
 
 <p align="center">
-  <sub>Made with ❤️ by Bilal/Fevziye.</sub>
+  <sub>Made with ❤️ by BilalTM.</sub>
 </p>
